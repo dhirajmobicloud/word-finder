@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Jij wint!",
+      "earned": "Je hebt verdiend",
+      "tryAgainButton": "Probeer het opnieuw"
+    },
+    "defeat": {
+      "title": "Je hebt verloren",
+      "answer": "Antwoord is",
+      "tryAgainButton": "Probeer het opnieuw"
+    },
+    "wordNotFound": "Woord niet gevonden",
+    "settings": {
+      "title": "Instellingen",
+      "numberOfLetters": "Aantal brieven",
+      "language": {
+        "title": "Taal",
+        "desc": "Taal wijzigen"
+      },
+      "darkMode": {
+        "title": "Donkere modus",
+        "desc": "Schakelen tussen donkere of lichte modus"
+      }
+    },
+    "statistics": {
+      "title": "Statistieken",
+      "played": "🕹️ Games gespeeld",
+      "wins": "🏆 Games gewonnen",
+      "winRate": "📈 % van de overwinningen",
+      "currentStreak": "🔥 Huidige Streak",
+      "maxStreak": "⚡️Max Streak",
+      "clearBtn": "Wissen"
+    },
+    "howToPlay": {
+      "title": "Hoe te spelen",
+      "description": "Raad het woord in 6 pogingen. Na elke gok verandert de kleur van de tegels om aan te geven hoe dicht je bij het woord zat.",
+      "sample": {
+        "correct": {
+          "word": "album",
+          "desc": "De letter A staat in het woord en op de juiste plaats"
+        },
+        "present": {
+          "word": "prima",
+          "desc": "De letter I staat in het woord maar op de verkeerde plek"
+        },
+        "absent": {
+          "word": "vroeg",
+          "desc": "De letter E komt nergens in het woord voor"
+        }
+      }
+    },
+    "hints": {
+      "title": "Tips",
+      "correct": {
+        "title": "Juist",
+        "desc": "Toon juiste letter"
+      },
+      "absent": {
+        "title": "Afwezig",
+        "desc": "Toon afwezigheidsletter op toetsenbord"
+      }
+    }
+  }
+}

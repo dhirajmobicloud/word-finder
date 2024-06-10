@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Panalo ka!",
+      "earned": "Kumita ka",
+      "tryAgainButton": "Subukan muli"
+    },
+    "defeat": {
+      "title": "Natalo ka",
+      "answer": "Ang sagot ay",
+      "tryAgainButton": "Subukan muli"
+    },
+    "wordNotFound": "Hindi Natagpuan ang Salita",
+    "settings": {
+      "title": "Mga Setting",
+      "numberOfLetters": "Bilang ng mga Liham",
+      "language": {
+        "title": "Wika",
+        "desc": "Baguhin ang wika"
+      },
+      "darkMode": {
+        "title": "Dark mode",
+        "desc": "Lumipat ng dark o light mode"
+      }
+    },
+    "statistics": {
+      "title": "Mga Istatistika",
+      "played": "🕹️ Games Played",
+      "wins": "🏆 Mga Larong Nanalo",
+      "winRate": "📈 % ng mga Panalo",
+      "currentStreak": "🔥 Kasalukuyang Streak",
+      "maxStreak": "⚡️ Max Streak",
+      "clearBtn": "Malinaw"
+    },
+    "howToPlay": {
+      "title": "Paano laruin",
+      "description": "Hulaan ang salita sa 6 na pagsubok. Pagkatapos ng bawat hula, magbabago ang kulay ng mga tile upang ipakita kung gaano kalapit ang iyong hula sa salita.",
+      "sample": {
+        "correct": {
+          "word": "pagod",
+          "desc": "Ang titik P ay nasa salita at nasa tamang lugar"
+        },
+        "present": {
+          "word": "pilot",
+          "desc": "Ang letrang L ay nasa salita ngunit nasa maling lugar"
+        },
+        "absent": {
+          "word": "mauso",
+          "desc": "Ang titik S ay wala sa salita sa anumang lugar"
+        }
+      }
+    },
+    "hints": {
+      "title": "Mga pahiwatig",
+      "correct": {
+        "title": "Tama",
+        "desc": "Ipakita ang tamang titik"
+      },
+      "absent": {
+        "title": "Wala",
+        "desc": "Ipakita ang liham ng pagliban sa Keyboard"
+      }
+    }
+  }
+}

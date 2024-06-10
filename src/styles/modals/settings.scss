@@ -1,0 +1,64 @@
+.settings-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+
+  &__num-of-letters {
+    margin: auto;
+  }
+
+  &__title {
+    font-weight: 500;
+
+    &.align-center {
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    font-size: 0.8rem;
+    color: var(--desc);
+  }
+
+  &__checkbox {
+    padding: 4px 0;
+  }
+}
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5px;
+
+  &__checkbox {
+    margin: 3px;
+    padding: 5px 10px;
+    background: var(--bg-3);
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.correct {
+      color: #fff;
+      background: var(--success);
+    }
+  }
+}
+
+.react-select {
+  &__single-value {
+    color: var(--text) !important;
+    // background: var(--bg-1) !important;
+  }
+
+  &__control {
+    background: var(--bg-3) !important;
+  }
+
+  &__menu {
+    color: var(--desc) !important;
+    background: var(--bg-2) !important;
+  }
+}

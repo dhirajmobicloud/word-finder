@@ -1,0 +1,26 @@
+.statistics {
+  &__row {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__card {
+    padding: 5px;
+    text-align: center;
+  }
+
+  &__value {
+    color: var(--text);
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+  }
+
+  &__hint {
+    color: var(--desc);
+    opacity: 0.6;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}

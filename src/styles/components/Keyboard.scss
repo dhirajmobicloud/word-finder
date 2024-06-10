@@ -1,0 +1,53 @@
+.keyboard {
+  // padding-bottom: 15px;
+  // margin-top: 15px;
+  // position: absolute;
+  // bottom: 15px;
+  // left: 0;
+  width: 100%;
+  padding: 0 5px;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &-button {
+    // color: var(--text);
+    color: #fff;
+    // background: var(--bg-2);
+    background: #bec772;
+    width: 45px;
+    margin: 2px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(105%);
+    }
+
+    &.correct {
+      color: #fff;
+      background: var(--correct);
+    }
+
+    &.present {
+      color: #fff;
+      background: var(--present);
+    }
+
+    &.absent {
+      color: #fff;
+      background-color: var(--absent);
+      transition: background-color 0.5s ease;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "¡Tú ganas!",
+      "earned": "Te ganaste",
+      "tryAgainButton": "Intentar de nuevo"
+    },
+    "defeat": {
+      "title": "Perdiste",
+      "answer": "La respuesta es",
+      "tryAgainButton": "Intentar de nuevo"
+    },
+    "wordNotFound": "Palabra no encontrada",
+    "settings": {
+      "title": "Configuración",
+      "numberOfLetters": "Número de Letras",
+      "language": {
+        "title": "Idioma",
+        "desc": "Cambiar idioma"
+      },
+      "darkMode": {
+        "title": "Modo oscuro",
+        "desc": "Cambiar modo oscuro o claro"
+      }
+    },
+    "statistics": {
+      "title": "Estadísticas",
+      "played": "🕹️ Juegos jugados",
+      "wins": "🏆 Juegos Ganados",
+      "winRate": "📈 % de victorias",
+      "currentStreak": "🔥 Racha actual",
+      "maxStreak": "⚡️ Racha máxima",
+      "clearBtn": "Borrar"
+    },
+    "howToPlay": {
+      "title": "Cómo jugar",
+      "description": "Adivina la palabra en 6 intentos. Después de cada intento, el color de las fichas cambiará para mostrar qué tan cerca estuvo tu suposición de la palabra.",
+      "sample": {
+        "correct": {
+          "word": "amigo",
+          "desc": "La letra A está en la palabra y en el lugar correcto"
+        },
+        "present": {
+          "word": "norma",
+          "desc": "La letra R está en la palabra pero en el lugar equivocado"
+        },
+        "absent": {
+          "word": "tarde",
+          "desc": "La letra D no está en la palabra en ningún lugar"
+        }
+      }
+    },
+    "hints": {
+      "title": "Consejos",
+      "correct": {
+        "title": "Correcto",
+        "desc": "Mostrar letra correcta"
+      },
+      "absent": {
+        "title": "Ausente",
+        "desc": "Mostrar letra de ausencias en el teclado"
+      }
+    }
+  }
+}

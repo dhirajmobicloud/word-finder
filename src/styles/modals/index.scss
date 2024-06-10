@@ -1,0 +1,270 @@
+@import "./win.scss";
+@import "./defeat.scss";
+@import "./word-not-found.scss";
+@import "./hints.scss";
+@import "./how-to-play.scss";
+@import "./settings.scss";
+@import "./statistics.scss";
+@import "./defeatend.scss";
+
+.popup {
+  &-overlay {
+    transition: all 3s ease-in-out;
+    animation: appear 0.3s ease;
+    background-color: rgba(107, 114, 128, 0.75);
+  }
+
+  &-content {
+    transition-duration: 0.15s;
+    transition-property: all;
+    animation: anvil 0.3s forwards;
+  }
+}
+
+.modal {
+  color: var(--text);
+  background: var(--bg-2);
+  box-shadow: 0 4px 23px 0 rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  padding: 15px;
+  max-width: 400px;
+  width: 90vw;
+
+  &-title {
+    color: var(--text);
+    text-align: center;
+  }
+
+  &-image {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: -20.5px;
+    right: -2.5px;
+    top: -19.5px;
+    right: -3.5px;
+    right: -6.5px;
+    top: -22.5px;
+    top: -10.5px;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    color: var(--text);
+    background: transparent;
+    transition: all var(--animation-speed-fast);
+    cursor: pointer;
+    border-radius: 50%;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    svg {
+      fill: none;
+    }
+  }
+}
+
+.modal.defeat {
+  background-image: url("../images/popup1.jpg");
+  background-size: 100% 100%;
+  position: absolute;
+  left: -45vw;
+  top: -35.6vh;
+  opacity: 80%;
+  transition: top 0.5s ease;
+  border-radius: 25px;
+  // top: -25.6vh;
+  top: 6vh;
+}
+
+.modal.hints {
+  background-image: url("../images/popup1.jpg");
+  background-size: 100% 100%;
+  position: absolute;
+  top: -42vh;
+  left: -45vw;
+  opacity: 70%;
+  transition: top 0.5s ease;
+  height: 320px;
+  border-radius: 40px;
+}
+
+.modal.hints1 {
+  background-image: url(http://localhost:3000/static/media/popupbg.576b104….jpg);
+  background-size: 100% 100%;
+  position: absolute;
+  top: -42vh;
+  left: -45vw;
+  opacity: 80%;
+  margin-top: 2vh;
+  transition: top 0.5s ease;
+}
+
+.modal.insufficient {
+  background-image: url("../images/popup1.jpg");
+  background-size: 100% 100%;
+  // position: absolute;
+  // top: -34.7vh;
+  // left: -45vw;
+  // opacity: 78%;
+  padding-top: 40px;
+  // top: -24.7vh;
+  transition: top 0.5s ease;
+  // height: 110px;
+  border-radius: 27px;
+  // top: -30.7vh;
+  height: 190px;
+  // opacity: 70%;
+}
+.modal.defeatend {
+  position: relative;
+  background-image: url("../images/popup1.jpg");
+  background-size: 100% 100%;
+  height: 5vh;
+  height: 250px;
+  border-radius: 26px;
+  position: relative;
+  top: 180px;
+  width: 93vw;
+  border-radius: 35px;
+  top: 107px;
+}
+
+.modal.settings {
+  position: absolute;
+  top: -35.7vh;
+  left: -45vw;
+  opacity: 80%;
+}
+
+.modal.defeatTimer {
+  background-color: #52d4e6;
+}
+
+.modal.win {
+  background-color: rgb(215 91 241);
+  background-image: url("../images/popup1.jpg");
+  background-size: 100% 100%;
+  height: 180px;
+  width: 350px;
+  top: -23.7vh;
+  opacity: 70%;
+  border-radius: 33px;
+  // top: 8.3vh;
+  top: 13.3vh;
+  position: relative;
+}
+
+.modal.winend {
+  background-color: rgb(215 91 241);
+  background-image: url("../images/popup1.jpg");
+  background-size: 100% 100%;
+  position: relative;
+  height: 150px;
+  width: 350px;
+  top: -23.7vh;
+  // opacity: 80%;
+  border-radius: 30px;
+  top: 170px;
+  height: 180px;
+  width: 350px;
+  // top: -23.7vh;
+  border-radius: 30px;
+  top: 230px;
+  top: 170px;
+}
+
+.modal.exit {
+  height: 190px;
+  background-image: url("../images/popup1.jpg");
+  background-size: 100% 100%;
+  border-radius: 25px;
+  // top:-15.7vh;
+  position: relative;
+  // top: -25vh;
+  // opacity: 70%;
+}
+
+.modal.hints {
+  // background-color: #cdcbf5;
+}
+
+.modal.howToPlay {
+  height: 90vh;
+  width: 90vw;
+  background-image: url("../images/playimage.png");
+  background-size: 100% 100%;
+  // position: relative;
+  background-position: center;
+  // top: 140px;
+  // overflow-y: scroll;
+}
+
+.modal howTo {
+  color: var(--text);
+  background: var(--bg-2);
+  box-shadow: 0 4px 23px 0 rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  padding: 15px;
+  max-width: 400px;
+  width: 90vw;
+
+  &-title {
+    color: var(--text);
+    text-align: center;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    color: var(--text);
+    background: transparent;
+    transition: all var(--animation-speed-fast);
+    cursor: pointer;
+    margin-bottom: 25px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    svg {
+      fill: none;
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes anvil {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.8, 0.8);
+  }
+  65.5% {
+    transform: scale(1.03, 1.03);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}

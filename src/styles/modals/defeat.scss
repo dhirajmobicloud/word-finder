@@ -1,0 +1,64 @@
+.defeat {
+  &-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  &-text{
+    color: black;
+
+  }
+
+  &-text3{
+    text-align: center;
+  }
+
+  &-answer
+  {
+   margin-top: 7px;
+   margin-bottom: 7px;
+   background-color:#368d12;
+   color: white;
+   padding-bottom: 5px;
+   padding-left: 5px;
+   padding-right: 5px;
+   text-transform: uppercase;
+   margin-right: 10px;
+   display: inline-block;
+   height: 40px;
+   width: 40px;
+   padding-bottom: 20px;
+   /* padding: 20px 20px; */
+   text-align: center;
+   font-size: 110%;
+   padding: 0.8px;
+   border-radius: 10px;
+   margin-right: 2.5px;
+
+
+  }
+
+  &-row1 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  // &-answer {
+  //   margin-bottom: 15px;
+  //   padding: 20px 20px;
+  //   text-transform: uppercase;
+  //   border-radius: 5px;
+  //   color: white;
+  //   background: #12218d;
+  //   border: 1px dashed #75819e;
+  //   font-size: 150%;
+  //   font-weight: bold;
+  //   text-align: center;
+  // }
+
+  &-exit{
+    color: white;
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Vous avez gagné !",
+      "earned": "Vous avez gagné",
+      "tryAgainButton": "Réessayer"
+    },
+    "defeat": {
+      "title": "Vous avez perdu",
+      "answer": "La réponse est",
+      "tryAgainButton": "Réessayer"
+    },
+    "wordNotFound": "Mot introuvable",
+    "settings": {
+      "title": "Paramètres",
+      "numberOfLetters": "Nombre de lettres",
+      "language": {
+        "title": "Langue",
+        "desc": "Changer de langue"
+      },
+      "darkMode": {
+        "title": "Mode sombre",
+        "desc": "Passer en mode sombre ou clair"
+      }
+    },
+    "statistics": {
+      "title": "Statistiques",
+      "played": "🕹️ Parties jouées",
+      "wins": "🏆 Jeux gagnés",
+      "winRate": "📈 % de victoires",
+      "currentStreak": "🔥 Série actuelle",
+      "maxStreak": "⚡️ MaxStreak",
+      "clearBtn": "Effacer"
+    },
+    "howToPlay": {
+      "title": "Comment jouer",
+      "description": "Devinez le mot en 6 essais. Après chaque devinette, la couleur des carreaux changera pour montrer à quel point votre devinette était proche du mot.",
+      "sample": {
+        "correct": {
+          "word": "actif",
+          "desc": "La lettre A est dans le mot et au bon endroit"
+        },
+        "present": {
+          "word": "mixte",
+          "desc": "La lettre X est dans le mot mais au mauvais endroit"
+        },
+        "absent": {
+          "word": "vague",
+          "desc": "La lettre U n'est dans le mot à aucun endroit"
+        }
+      }
+    },
+    "hints": {
+      "title": "Conseils",
+      "correct": {
+        "title": "Correct",
+        "desc": "Afficher la lettre correcte"
+      },
+      "absent": {
+        "title": "Absent",
+        "desc": "Afficher la lettre d'absence sur le clavier"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.defeatTimer {
+    &-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    &-answer {
+      padding: 5px 10px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      color: var(--desc);
+      background: #f1f3f9;
+      border: 1px dashed #75819e;
+    }
+  }
+  

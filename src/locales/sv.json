@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Du vinner!",
+      "earned": "Du tjänade",
+      "tryAgainButton": "Försök igen"
+    },
+    "defeat": {
+      "title": "Du förlorade",
+      "answer": "Svaret är",
+      "tryAgainButton": "Försök igen"
+    },
+    "wordNotFound": "Ordet hittades inte",
+    "settings": {
+      "title": "Inställningar",
+      "numberOfLetters": "Antal bokstäver",
+      "language": {
+        "title": "Språk",
+        "desc": "Ändra språk"
+      },
+      "darkMode": {
+        "title": "Mörkt läge",
+        "desc": "Byt mörkt eller ljust läge"
+      }
+    },
+    "statistics": {
+      "title": "Statistik",
+      "played": "🕹️ Spelade spel",
+      "wins": "🏆 Spel vann",
+      "winRate": "📈 % av vinsterna",
+      "currentStreak": "🔥 Aktuell streak",
+      "maxStreak": "⚡️ Max Streak",
+      "clearBtn": "Rensa"
+    },
+    "howToPlay": {
+      "title": "Hur man spelar",
+      "description": "Gissa ordet i 6 försök. Efter varje gissning kommer färgen på brickorna att ändras för att visa hur nära din gissning var ordet.",
+      "sample": {
+        "correct": {
+          "word": "tyfon",
+          "desc": "Bokstaven T finns i ordet och på rätt plats"
+        },
+        "present": {
+          "word": "pilot",
+          "desc": "Bokstaven L finns i ordet men på fel plats"
+        },
+        "absent": {
+          "word": "makro",
+          "desc": "Bokstaven R finns inte i ordet på någon plats"
+        }
+      }
+    },
+    "hints": {
+      "title": "Tips",
+      "correct": {
+        "title": "Korrekt",
+        "desc": "Visa rätt bokstav"
+      },
+      "absent": {
+        "title": "Frånvarande",
+        "desc": "Visa frånvarande bokstav på tangentbordet"
+      }
+    }
+  }
+}

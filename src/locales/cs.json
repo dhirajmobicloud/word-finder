@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Vyhrajete!",
+      "earned": "Vydělali jste",
+      "tryAgainButton": "Zkuste to znovu"
+    },
+    "defeat": {
+      "title": "Prohráli jste",
+      "answer": "Odpověď je",
+      "tryAgainButton": "Zkuste to znovu"
+    },
+    "wordNotFound": "Slovo nenalezeno",
+    "settings": {
+      "title": "Nastavení",
+      "numberOfLetters": "Počet písmen",
+      "language": {
+        "title": "Jazyk",
+        "desc": "Změnit jazyk"
+      },
+      "darkMode": {
+        "title": "Tmavý režim",
+        "desc": "Přepnout tmavý nebo světlý režim"
+      }
+    },
+    "statistics": {
+      "title": "Statistiky",
+      "played": "🕹️ Hry odehrané",
+      "wins": "🏆 Vyhrané hry",
+      "winRate": "📈 % výher",
+      "currentStreak": "🔥 Current Streak",
+      "maxStreak": "⚡️ Max Streak",
+      "clearBtn": "Vymazat"
+    },
+    "howToPlay": {
+      "title": "Jak hrát",
+      "description": "Uhádni slovo na 6 pokusů. Po každém uhodnutí se barva destiček změní, aby bylo vidět, jak blízko byl tvůj odhad slovu.",
+      "sample": {
+        "correct": {
+          "word": "akord",
+          "desc": "Písmeno A je ve slově a na správném místě"
+        },
+        "present": {
+          "word": "pilot",
+          "desc": "Písmeno L je ve slově, ale na špatném místě"
+        },
+        "absent": {
+          "slovo": "touha",
+          "desc": "Písmeno H není ve slově na žádném místě"
+        }
+      }
+    },
+    "hints": {
+      "title": "Tipy",
+      "correct": {
+        "title": "Správně",
+        "desc": "Zobrazit správné písmeno"
+      },
+      "absent": {
+        "title": "Nepřítomný",
+        "desc": "Zobrazit chybějící písmeno na klávesnici"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "660493145372",
+    "firebase_url": "https://word-quest-a2b1b-default-rtdb.firebaseio.com",
+    "project_id": "word-quest-a2b1b",
+    "storage_bucket": "word-quest-a2b1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660493145372:android:5afab519dc07a2a55f56d9",
+        "android_client_info": {
+          "package_name": "com.example.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660493145372-jnlis29u31vofjur4jekgv5iogrsbsjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcCbgFbC67ljvOi0AOSdzYRiAGVHLnKg8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660493145372-jnlis29u31vofjur4jekgv5iogrsbsjh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

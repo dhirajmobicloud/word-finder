@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "You win!",
+      "earned": "You earned",
+      "tryAgainButton": "Try again"
+    },
+    "defeat": {
+      "title": "You lost",
+      "answer": "Answer is",
+      "tryAgainButton": "Try again"
+    },
+    "wordNotFound": "Word Not Found",
+    "settings": {
+      "title": "Settings",
+      "numberOfLetters": "Number of Letters",
+      "language": {
+        "title": "Language",
+        "desc": "Change language"
+      },
+      "darkMode": {
+        "title": "Dark mode",
+        "desc": "Switch dark or light mode"
+      }
+    },
+    "statistics": {
+      "title": "Statistics",
+      "played": "🕹️ Games Played",
+      "wins": "🏆 Games Won",
+      "winRate": "📈 % of Wins",
+      "currentStreak": "🔥 Current Streak",
+      "maxStreak": "⚡️ Max Streak",
+      "clearBtn": "Clear"
+    },
+    "howToPlay": {
+      "title": "How to play",
+      "description": "Guess the word in 6 tries. After each guess, the color of the tiles will change to show how close your guess was to the word.",
+      "sample": {
+        "correct": {
+          "word": "weary",
+          "desc": "The letter W is in the word and in the correct spot"
+        },
+        "present": {
+          "word": "pilot",
+          "desc": "The letter L is in the word but in the wrong spot"
+        },
+        "absent": {
+          "word": "vague",
+          "desc": "The letter U is not in the word in any spot"
+        }
+      }
+    },
+    "hints": {
+      "title": "Hints",
+      "correct": {
+        "title": "Correct",
+        "desc": "Show correct letter"
+      },
+      "absent": {
+        "title": "Absent",
+        "desc": "Show absents letter on Keyboard"
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Hai vinto!",
+      "earned": "Hai guadagnato",
+      "tryAgainButton": "Riprova"
+    },
+    "defeat": {
+      "title": "Hai perso",
+      "answer": "La risposta è",
+      "tryAgainButton": "Riprova"
+    },
+    "wordNotFound": "Parola non trovata",
+    "settings": {
+      "title": "Impostazioni",
+      "numberOfLetters": "Numero di lettere",
+      "language": {
+        "title": "Lingua",
+        "desc": "Cambia lingua"
+      },
+      "darkMode": {
+        "title": "Modalità oscura",
+        "desc": "Cambia modalità scura o chiara"
+      }
+    },
+    "statistics": {
+      "title": "Statistiche",
+      "played": "🕹️ Partite giocate",
+      "wins": "🏆 Giochi vinti",
+      "winRate": "📈 % di vittorie",
+      "currentStreak": "🔥 Serie attuale",
+      "maxStreak": "⚡️ Max Streak",
+      "clearBtn": "Cancella"
+    },
+    "howToPlay": {
+      "title": "Come si gioca",
+      "description": "Indovina la parola in 6 tentativi. Dopo ogni ipotesi, il colore delle tessere cambierà per mostrare quanto la tua ipotesi era vicina alla parola.",
+      "sample": {
+        "correct": {
+          "word": "anche",
+          "desc": "La lettera A è nella parola e nel punto corretto"
+        },
+        "present": {
+          "word": "oncia",
+          "desc": "La lettera C è nella parola ma nel posto sbagliato"
+        },
+        "absent": {
+          "word": "venti",
+          "desc": "La lettera T non è nella parola in nessun punto"
+        }
+      }
+    },
+    "hints": {
+      "title": "Suggerimenti",
+      "correct": {
+        "title": "Corretto",
+        "desc": "Mostra la lettera corretta"
+      },
+      "absent": {
+        "title": "Assente",
+        "desc": "Mostra la lettera degli assenti sulla tastiera"
+      }
+    }
+  }
+}

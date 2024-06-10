@@ -1,0 +1,21 @@
+.winEndGame-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  
+    &__earned {
+      color: var(--success);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  
+  }
+
+  .winEndGame-description{
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    line-height: 39px;
+    font-style: normal;
+    font-weight: 400
+  }
+  

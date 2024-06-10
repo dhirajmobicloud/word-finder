@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Anda menang!",
+      "earned": "Anda memperoleh",
+      "tryAgainButton": "Coba lagi"
+    },
+    "defeat": {
+      "title": "Anda kalah",
+      "answer": "Jawaban adalah",
+      "tryAgainButton": "Coba lagi"
+    },
+    "wordNotFound": "Kata Tidak Ditemukan",
+    "settings": {
+      "title": "Pengaturan",
+      "numberOfLetters": "Jumlah Huruf",
+      "language": {
+        "title": "Bahasa",
+        "desc": "Ubah bahasa"
+      },
+      "darkMode": {
+        "title": "Mode gelap",
+        "desc": "Beralih mode gelap atau terang"
+      }
+    },
+    "statistics": {
+      "title": "Statistik",
+      "played": "🕹️ Game Dimainkan",
+      "wins": "🏆 Pertandingan Dimenangkan",
+      "winRate": "📈 % dari Kemenangan",
+      "currentStreak": "🔥 Streak Saat Ini",
+      "maxStreak": "⚡️ Max Streak",
+      "clearBtn": "Hapus"
+    },
+    "howToPlay": {
+      "title": "Cara bermain",
+      "description": "Tebak kata dalam 6 percobaan. Setelah setiap tebakan, warna ubin akan berubah untuk menunjukkan seberapa dekat tebakan Anda dengan kata tersebut.",
+      "sample": {
+        "correct": {
+          "word": "dunia",
+          "desc": "Huruf D ada di kata dan di tempat yang benar"
+        },
+        "present": {
+          "word": "pilot",
+          "desc": "Huruf L ada di kata tetapi di tempat yang salah"
+        },
+        "absent": {
+          "word": "pintu",
+          "desc": "Huruf T tidak ada di mana pun"
+        }
+      }
+    },
+    "hints": {
+      "title": "Petunjuk",
+      "correct": {
+        "title": "Benar",
+        "desc": "Tampilkan huruf yang benar"
+      },
+      "absent": {
+        "title": "Tidak ada",
+        "desc": "Tampilkan surat absen di Keyboard"
+      }
+    }
+  }
+}

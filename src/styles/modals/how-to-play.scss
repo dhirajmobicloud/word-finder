@@ -1,0 +1,68 @@
+.howToPlay {
+background-image: url('../images/instructions.png');
+
+
+
+  &-row {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .desc {
+    color: var(--text);
+    opacity: 0.6;
+    font-size: 0.8rem;
+  }
+
+  .sample-word {
+    display: flex;
+    justify-content: center;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text);
+      background: var(--bg-2);
+      border: 2px solid var(--bg-3);
+      border-radius: 5px;
+      margin: 2px;
+      width: 45px;
+      aspect-ratio: 1;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 1px #000;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &.correct {
+        color: #fff;
+        background: var(--correct);
+      }
+
+      &.present {
+        color: #fff;
+        background: var(--present);
+      }
+
+      &.absent {
+        color: #fff;
+        background: var(--absent);
+      }
+    }
+  }
+}
+
+.modal{
+  &.howToPlay{
+
+    &:has(.modal-image){
+      .modal__close-btn{
+        color: white !important;
+        top: 38.5px !important;
+        right: 42px !important;
+      }
+      // color: white !important;
+    }
+  }
+}

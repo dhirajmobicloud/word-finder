@@ -1,0 +1,5 @@
+export { default as Header } from './Header'
+export { default as Board } from './board/Board'
+export { default as Keyboard } from './keyboard/Keyboard'
+export { default as Controls } from './Controls'
+export { default as Modals } from './modals'

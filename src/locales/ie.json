@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Tá bua agat!",
+      "earned": "thuill tú",
+      "tryAgainButton": "Déan iarracht eile"
+    },
+    "defeat": {
+      "title": "Chaill tú",
+      "answer": "Is é an freagra",
+      "tryAgainButton": "Déan iarracht eile"
+    },
+    "wordNotFound": "Focal Gan Aimsiú",
+    "settings": {
+      "title": "Socruithe",
+      "numberOfLetters": "Líon Litreacha",
+      "language": {
+        "title": "Teanga",
+        "desc": "Athraigh teanga"
+      },
+      "darkMode": {
+        "title": "Mód dorcha",
+        "desc": "Athraigh mód dorcha nó éadrom"
+      }
+    },
+    "statistics": {
+      "title": "Staidreamh",
+      "played": "🕹️ Cluichí a Imirt",
+      "wins": "🏆 Cluichí Buaite",
+      "winRate": "📈 % de Bhuaigh",
+      "currentStreak": "🔥 Sruth Reatha",
+      "maxStreak": "⚡️ Uasmhéid",
+      "clearBtn": "Glan"
+    },
+    "howToPlay": {
+      "title": "Conas a imirt",
+      "description": "Buille faoi thuairim an focal i 6 iarracht. Tar éis gach buille faoi thuairim, athrófar dath na tíleanna chun a thaispeáint cé chomh gar agus a bhí do thuairim don fhocal.",
+      "sample": {
+        "correct": {
+          "word": "casúr",
+          "desc": "Tá an litir C san fhocal agus sa spota ceart"
+        },
+        "present": {
+          "word": "fiuch",
+          "desc": "Tá an litir U san fhocal ach sa spota mícheart"
+        },
+        "absent": {
+          "word": "víosa",
+          "desc": "Níl an litir S san fhocal in aon spota"
+        }
+      }
+    },
+    "hints": {
+      "title": "leideanna",
+      "correct": {
+        "title": "Ceart",
+        "desc": "Taispeáin an litir cheart"
+      },
+      "absent": {
+        "title": "In easnamh",
+        "desc": "Taispeáin litir asláithreachtaí ar an Méarchlár"
+      }
+    }
+  }
+}

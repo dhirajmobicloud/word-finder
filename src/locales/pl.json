@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Wygrywasz!",
+      "earned": "Zarobiłeś",
+      "tryAgainButton": "Spróbuj ponownie"
+    },
+    "defeat": {
+      "title": "Przegrałeś",
+      "answer": "Odpowiedź brzmi",
+      "tryAgainButton": "Spróbuj ponownie"
+    },
+    "wordNotFound": "Nie znaleziono słowa",
+    "settings": {
+      "title": "Ustawienia",
+      "numberOfLetters": "Liczba liter",
+      "language": {
+        "title": "Język",
+        "desc": "Zmień język"
+      },
+      "darkMode": {
+        "title": "Tryb ciemny",
+        "desc": "Przełącz tryb ciemny lub jasny"
+      }
+    },
+    "statistics": {
+      "title": "Statystyki",
+      "played": "🕹️ Grane w gry",
+      "wins": "🏆 Wygrane gry",
+      "winRate": "📈 % wygranych",
+      "currentStreak": "🔥 Aktualna seria",
+      "maxStreak": "⚡️ Max Streak",
+      "clearBtn": "Wyczyść"
+    },
+    "howToPlay": {
+      "title": "Jak grać",
+      "description": "Odgadnij word w 6 próbach. Po każdym odgadnięciu kolor kafelków zmieni się, aby pokazać, jak blisko było odgadnięcia słowa.",
+      "sample": {
+        "correct": {
+          "word": "agent",
+          "desc": "Litera A jest w słowie i we właściwym miejscu"
+        },
+        "present": {
+          "word": "pilot",
+          "desc": "Litera L jest w słowie, ale w złym miejscu"
+        },
+        "absent": {
+          "word": "akord",
+          "desc": "Litera R nie występuje w słowie w żadnym miejscu"
+        }
+      }
+    },
+    "hints": {
+      "title": "Podpowiedzi",
+      "correct": {
+        "title": "Prawidłowo",
+        "desc": "Pokaż poprawną literę"
+      },
+      "absent": {
+        "title": "Nieobecny",
+        "desc": "Pokaż literę nieobecności na klawiaturze"
+      }
+    }
+  }
+}

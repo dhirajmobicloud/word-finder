@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Você venceu!",
+      "earned": "Você ganhou",
+      "tryAgainButton": "Tente novamente"
+    },
+    "defeat": {
+      "title": "Você perdeu",
+      "answer": "A resposta é",
+      "tryAgainButton": "Tente novamente"
+    },
+    "wordNotFound": "word não encontrada",
+    "settings": {
+      "title": "Configurações",
+      "numberOfLetters": "Número de Letras",
+      "language": {
+        "title": "Idioma",
+        "desc": "Alterar idioma"
+      },
+      "darkMode": {
+        "title": "Modo escuro",
+        "desc": "Alternar modo escuro ou claro"
+      }
+    },
+    "statistics": {
+      "title": "Estatísticas",
+      "played": "🕹️ Jogos jogados",
+      "wins": "🏆 Jogos ganhos",
+      "winRate": "📈 % de vitórias",
+      "currentStreak": "🔥 Current Streak",
+      "maxStreak": "⚡️ Max Streak",
+      "clearBtn": "Limpar"
+    },
+    "howToPlay": {
+      "title": "Como jogar",
+      "description": "Adivinhe a word em 6 tentativas. Depois de cada palpite, a cor das peças mudará para mostrar o quão próximo seu palpite foi da word.",
+      "sample": {
+        "correct": {
+          "word": "gesto",
+          "desc": "A letra G está na word e no local correct"
+        },
+        "present": {
+          "word": "palma",
+          "desc": "A letra L está na word, mas no lugar errado"
+        },
+        "absent": {
+          "word": "setor",
+          "desc": "A letra O não está na word em nenhum lugar"
+        }
+      }
+    },
+    "hints": {
+      "title": "Dicas",
+      "correct": {
+        "title": "Correto",
+        "desc": "Mostrar letra correta"
+      },
+      "absent": {
+        "title": "Ausente",
+        "desc": "Mostrar letras ausentes no teclado"
+      }
+    }
+  }
+}

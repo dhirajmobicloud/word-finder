@@ -1,0 +1,27 @@
+:root {
+  --font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+  --font-family-sans-serif: 'Nunito', sans-serif;
+
+  --success: #35bba6;
+  --info: #6cb2eb;
+  --warning: #ffed4a;
+  --danger: #cb3b48;
+
+  --correct: #79b851;
+  --present: #f3c237;
+  --absent: #a7adc0;
+  --unknown: #dce1ed;
+
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  --animation-speed: 1000ms;
+  --animation-speed-fast: 200ms;
+}

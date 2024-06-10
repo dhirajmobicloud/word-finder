@@ -1,0 +1,33 @@
+{
+    "code":"Wordsie@007",
+    "url":"https://exquisite-cannoli-28d489.netlify.app",
+    "name":{
+        "en":"Wordsie"
+    },
+    "isPotrait":true,
+    "description":{
+        "en":"Snackable version of the popular Wordle game where you can have lots of fun and have some knowledge regarding some words.Use your fast 5 letter word guessing skills to find the words in 6 tries and most of the words in the 5 minutes time.Presented in the elegant user-friendly theme.Wordsie is the just Wordle experience you need to offer lots of fun along with improving vocabulary."
+    },
+    "gamePreviews":{
+        "en":""
+    },
+    "categories":{
+        "en":[
+
+        ]
+    },
+    "tags":{
+        "en":[
+            "New Games"
+        ]
+    },
+    "width":600,
+    "height":920,
+    "colorMuted":"#3E6680",
+    "colorVibrant":"#75A0BD",
+    "rating":null,
+    "levelUrl":{
+
+    }
+    
+}

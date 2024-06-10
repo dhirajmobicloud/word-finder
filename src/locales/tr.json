@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Sen kazandın!",
+      "earned": "Kazandınız",
+      "tryAgainButton": "Tekrar deneyin"
+    },
+    "defeat": {
+      "title": "Kaybettiniz",
+      "answer": "Cevap",
+      "tryAgainButton": "Tekrar deneyin"
+    },
+    "wordNotFound": "Kelime Bulunamadı",
+    "settings": {
+      "title": "Ayarlar",
+      "numberOfLetters": "Harf Sayısı",
+      "language": {
+        "title": "Dil",
+        "desc": "Dili değiştir"
+      },
+      "darkMode": {
+        "title": "Karanlık mod",
+        "desc": "Karanlık veya aydınlık modu değiştir"
+      }
+    },
+    "statistics": {
+      "title": "İstatistikler",
+      "played": "🕹️ Oynanan Oyunlar",
+      "wins": "🏆 Kazanılan Oyunlar",
+      "winRate": "📈 Kazanma Yüzdesi",
+      "currentStreak": "🔥 Current Streak",
+      "maxStreak": "⚡️ Max Streak",
+      "clearBtn": "Temizle"
+    },
+    "howToPlay": {
+      "title": "Nasıl oynanır",
+      "description": "6 denemede kelimeyi tahmin et. Her tahminden sonra, tahminin kelimeye ne kadar yakın olduğunu göstermek için karoların rengi değişecek.",
+      "sample": {
+        "correct": {
+          "word": "albüm",
+          "desc": "A harfi kelimenin içinde ve doğru yerde"
+        },
+        "present": {
+          "word": "pilot",
+          "desc": "L harfi kelimede ama yanlış yerde"
+        },
+        "absent": {
+          "word": "marul",
+          "desc": "U harfi kelimenin hiçbir yerinde yok"
+        }
+      }
+    },
+    "hints": {
+      "title": "İpuçları",
+      "correct": {
+        "title": "Doğru",
+        "desc": "Doğru harfi göster"
+      },
+      "absent": {
+        "title": "Yok",
+        "desc": "Klavyede eksik harfi göster"
+      }
+    }
+  }
+}

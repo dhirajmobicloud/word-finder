@@ -1,0 +1,65 @@
+{
+  "translation": {
+    "win": {
+      "title": "Du gewinnst!",
+      "earned": "Du hast verdient",
+      "tryAgainButton": "Erneut versuchen"
+    },
+    "defeat": {
+      "title": "Du hast verloren",
+      "answer": "Antwort ist",
+      "tryAgainButton": "Erneut versuchen"
+    },
+    "wordNotFound": "Wort nicht gefunden",
+    "settings": {
+      "title": "Einstellungen",
+      "numberOfLetters": "Anzahl Buchstaben",
+      "language": {
+        "title": "Sprache",
+        "desc": "Sprache ändern"
+      },
+      "darkMode": {
+        "title": "Dunkler Modus",
+        "desc": "Dunkel- oder Hellmodus wechseln"
+      }
+    },
+    "statistics": {
+      "title": "Statistiken",
+      "played": "🕹️ Spiele gespielt",
+      "wins": "🏆 Spiele gewonnen",
+      "winRate": "📈 % der Gewinne",
+      "currentStreak": "🔥 Aktueller Streak",
+      "maxStreak": "⚡️ Maximaler Streak",
+      "clearBtn": "Löschen"
+    },
+    "howToPlay": {
+      "title": "Spielanleitung",
+      "description": "Erraten Sie das Wort in 6 Versuchen. Nach jedem Raten ändert sich die Farbe der Kacheln, um anzuzeigen, wie nah Sie dem Wort geraten sind.",
+      "sample": {
+        "correct": {
+          "word": "abzug",
+          "desc": "Der Buchstabe A ist im Wort und an der richtigen Stelle"
+        },
+        "present": {
+          "word": "Pilot",
+          "desc": "Der Buchstabe L ist im Wort, aber an der falschen Stelle"
+        },
+        "absent": {
+          "word": "twist",
+          "desc": "Der Buchstabe S kommt an keiner Stelle im Wort vor"
+        }
+      }
+    },
+    "hints": {
+      "title": "Tipps",
+      "correct": {
+        "title": "Richtig",
+        "desc": "Richtigen Buchstaben anzeigen"
+      },
+      "absent": {
+        "title": "Abwesend",
+        "desc": "Abwesenheitsbrief auf der Tastatur anzeigen"
+      }
+    }
+  }
+}
