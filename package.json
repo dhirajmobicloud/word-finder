@@ -5,7 +5,9 @@
   "homepage": ".",
   "dependencies": {
     "@capacitor/android": "^6.0.0",
+    "@capacitor/app": "^6.0.0",
     "@capacitor/core": "^6.0.0",
+    "@capacitor/dialog": "^6.0.0",
     "@capacitor/preferences": "^6.0.0",
     "@rematch/core": "^2.2.0",
     "@rematch/immer": "^2.1.3",

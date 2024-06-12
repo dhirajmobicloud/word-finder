@@ -64,7 +64,13 @@
     align-items: center;
     position: absolute;
     border-radius: 15px;
-    width: 80%;
+    width: 90%;
+    min-height: 200px;
+    .dismiss {
+      position: absolute;
+      top: 0;
+      right: 10px;
+    }
     .phone-input-heading {
       h5 {
         display: flex;
@@ -85,6 +91,7 @@
         margin: 10px 0 15px 0;
         width: 80%;
         font-size: 1.1rem;
+        text-align: center;
       }
       button {
         width: max-content;
@@ -95,9 +102,9 @@
         font-size: 15px;
       }
     }
-    // #recaptcha-container {
-    //   margin: 10px 0;
-    // }
+    #recaptcha-container {
+      margin-top: 10px;
+    }
   }
 }
 
@@ -113,10 +120,17 @@
     background-color: rgba(0, 0, 0, 0.286);
     border-radius: 30px;
     display: flex;
+    align-items: center;
     span {
       color: #fff !important;
       font-weight: bold;
       font-size: large !important;
+    }
+    img {
+      border-radius: 50%;
+      margin: 0 3px 0 0;
+      height: 35px;
+      width: 35px;
     }
   }
 }

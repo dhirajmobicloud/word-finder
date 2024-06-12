@@ -6,18 +6,27 @@ import {
   signInWithPhoneNumber,
   RecaptchaVerifier,
   signInWithEmailLink,
+  signInWithRedirect,
+  getRedirectResult,
 } from "firebase/auth";
-import { auth, db } from "../../firebase/firebase.config";
+import {
+  auth,
+  db,
+  getUser,
+  writeUserData,
+} from "../../firebase/firebase.config";
 import { FcGoogle } from "react-icons/fc";
 import { useEffect, useState } from "react";
 // import { Preferences } from "@capacitor/preferences";
 import logo from "../../assets/images/logo.png";
 import { IoPersonCircle } from "react-icons/io5";
 import { MdOutlinePhoneIphone } from "react-icons/md";
+import { ImCross } from "react-icons/im";
 import { useDispatch } from "react-redux";
 import Logout from "../../components/modals/Logout";
 import Loder from "../../components/Loder";
-import { setDoc, doc, getDoc } from "firebase/firestore";
+import { Dialog } from "@capacitor/dialog";
+// import { set, } from "firebase/database";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -25,45 +34,47 @@ const Homepage = () => {
 
   // const [isLogined, setIsLogined] = useState(false);
   const [user, setUser] = useState(null);
+  const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
   const [loginThroughPhone, setLoginThroughPhone] = useState(false);
   const [enterOtp, setEnterOtp] = useState(false);
   const [confirmation, setConfirmation] = useState();
   const [phoneNumber, setPhoneNumber] = useState("");
   const [verificationCode, setVerificationCode] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const signIn = async (e) => {
     const provider = new GoogleAuthProvider();
-    return signInWithPopup(auth, provider).then(async (response) => {
-      // localStorage.setItem("user", JSON.stringify(response.user));
-      // await Preferences.set({
-      //   key: "user",
-      //   value: JSON.stringify({
-      //     displayName: response.user.displayName,
-      //     accessToken: response.user.accessToken,
-      //     email: response.user.email,
-      //     phoneNumber: response.user.phoneNumber,
-      //     uid: response.user.uid,
-      //     photoURL: response.user.photoURL,
-      //   }),
-      // });
-      setUser({
-        displayName: response.user.displayName,
-        accessToken: response.user.accessToken,
-        email: response.user.email,
-        phoneNumber: response.user.phoneNumber,
-        uid: response.user.uid,
-        photoURL: response.user.photoURL,
-      });
-      await setDoc(doc(db, "Users", response.user.uid), { score: 0 });
-      console.log("User :", response.user);
-      // setIsLogined(true);
-    });
+    signInWithRedirect(auth, provider);
+    setLoading(true);
+    // return signInWithPopup(auth, provider).then(async (response) => {
+    //   const user = await getUser(response.user.uid);
+    //   if (!user.exists()) {
+    //     writeUserData(
+    //       response.user.uid,
+    //       response.user.displayName,
+    //       response.user.email,
+    //       response.user.phoneNumber
+    //     );
+    //   }
+    //   setUser({
+    //     displayName: response.user.displayName,
+    //     accessToken: response.user.accessToken,
+    //     email: response.user.email,
+    //     phoneNumber: response.user.phoneNumber,
+    //     uid: response.user.uid,
+    //     photoURL: response.user.photoURL,
+    //   });
+    //   // await setDoc(doc(db, "Users", response.user.uid), { score: 0 });
+
+    //   console.log("User :");
+    // });
   };
 
   const phoneLogin = async (e) => {
-    e.preventDefault();
     try {
+      e.preventDefault();
+
       const recaptchaVerifier = new RecaptchaVerifier(
         auth,
         "recaptcha-container",
@@ -75,56 +86,78 @@ const Homepage = () => {
         `+91 ${phoneNumber}`,
         recaptchaVerifier
       );
+
       setConfirmation(confirmationResult);
       setEnterOtp(true);
       setLoginThroughPhone(false);
-    } catch (error) {}
+    } catch (error) {
+      await Dialog.alert({
+        title: "Stop",
+        message: "Error while sending OTP",
+      });
+    }
   };
 
   const verifyOtp = (e) => {
     e.preventDefault();
-    confirmation.confirm(verificationCode).then(async (result) => {
-      // localStorage.setItem("user", JSON.stringify(result));
-      // await Preferences.set({
-      //   key: "user",
-      //   value: JSON.stringify({
-      //     displayName: result.user.displayName,
-      //     accessToken: result.user.accessToken,
-      //     email: result.user.email,
-      //     phoneNumber: result.user.phoneNumber,
-      //     uid: result.user.uid,
-      //     photoURL: result.user.photoURL,
-      //   }),
-      // });
-      setUser({
-        displayName: result.user.displayName,
-        accessToken: result.user.accessToken,
-        email: result.user.email,
-        phoneNumber: result.user.phoneNumber,
-        uid: result.user.uid,
-        photoURL: result.user.photoURL,
+    confirmation
+      .confirm(verificationCode)
+      .then(async (result) => {
+        const currentUser = auth.currentUser;
+        // user.updateProfile({
+        //   displayName,
+        //   email,
+        // });
+        currentUser.displayName = displayName;
+        currentUser.email = email;
+        const user = await getUser(result.user.uid);
+        if (!user.exists()) {
+          writeUserData(
+            result.user.uid,
+            result.user.displayName,
+            result.user.email,
+            result.user.phoneNumber
+          );
+        }
+        setDisplayName("");
+        setEmail("");
+        setEnterOtp("");
+        setLoginThroughPhone(false);
+        setPhoneNumber("");
+        setEnterOtp("");
+        setUser({
+          displayName: result.user.displayName,
+          accessToken: result.user.accessToken,
+          email: result.user.email,
+          phoneNumber: result.user.phoneNumber,
+          uid: result.user.uid,
+          photoURL: result.user.photoURL,
+        });
+
+        console.log("User :", result, user.exists());
+      })
+      .catch(async (error) => {
+        await Dialog.alert({
+          title: "Stop",
+          message: "Error while verifying OTP",
+        });
       });
-      console.log("User :", result);
-      setEnterOtp(false);
-      setLoginThroughPhone(false);
-      // setIsLogined(true);
-    });
   };
 
   const getStoredUser = async () => {
-    // const { value } = await Preferences.get({ key: "user" });
     setLoading(true);
 
     auth.onAuthStateChanged((data) => {
       console.log(data);
-      setUser({
-        displayName: data.displayName,
-        accessToken: data.accessToken,
-        email: data.email,
-        phoneNumber: data.phoneNumber,
-        uid: data.uid,
-        photoURL: data.photoURL,
-      });
+      data &&
+        setUser({
+          displayName: data.displayName,
+          accessToken: data.accessToken,
+          email: data.email,
+          phoneNumber: data.phoneNumber,
+          uid: data.uid,
+          photoURL: data.photoURL,
+        });
     });
     setTimeout(() => {
       setLoading(false);
@@ -132,17 +165,31 @@ const Homepage = () => {
   };
 
   const logoutHandler = async () => {
-    // await Preferences.remove({ key: "user" });
     dispatch.popups.open("logout");
-    // await auth.signOut();
-    // navigate("/");
   };
 
   useEffect(() => {
+    setLoading(true);
     getStoredUser();
+    getRedirectResult(auth)
+      .then(async (response) => {
+        console.log("RedirectResult ::: ", response);
+        const user = await getUser(response.user.uid);
+        if (!user.exists()) {
+          writeUserData(
+            response.user.uid,
+            response.user.displayName,
+            response.user.email,
+            response.user.phoneNumber
+          );
+        }
+      })
+      .catch((error) => {
+        console.log("RedirectError ::: ", error);
+      });
   }, []);
 
-  console.log("User ::", user);
+  // console.log("User ::", user);
 
   return (
     <div className="homepage">
@@ -151,12 +198,12 @@ const Homepage = () => {
         <div className="signIn">
           {!loginThroughPhone && !enterOtp && (
             <>
-              <div className="option-login">
+              {/* <div className="option-login">
                 <button onClick={signIn}>
                   {" "}
                   <FcGoogle size={22} /> Login with Google{" "}
                 </button>
-              </div>
+              </div> */}
               <div className="option-login">
                 <button onClick={() => setLoginThroughPhone(true)}>
                   <MdOutlinePhoneIphone size={22} />
@@ -167,6 +214,18 @@ const Homepage = () => {
           )}
           {loginThroughPhone && (
             <div className="phone-input">
+              <span
+                className="dismiss"
+                onClick={() => {
+                  // eslint-disable-next-line no-unused-expressions
+                  setLoginThroughPhone(false),
+                    setDisplayName(""),
+                    setPhoneNumber(""),
+                    setEmail("");
+                }}
+              >
+                <ImCross size={22} />
+              </span>
               <div className="phone-input-heading">
                 <h5>
                   {" "}
@@ -175,12 +234,29 @@ const Homepage = () => {
               </div>
               <form onSubmit={phoneLogin}>
                 {/* <label htmlFor="phone">Enter your phone number</label> */}
+
+                <input
+                  required
+                  value={displayName}
+                  onChange={(e) => setDisplayName(e.target.value)}
+                  type="text"
+                  placeholder="Enter your name"
+                />
+                <input
+                  // required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
+                  placeholder="Enter your email"
+                />
                 <input
                   required
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   type="text"
-                  placeholder="+91 XXXXX XX789"
+                  placeholder="XXXXX XX789"
+                  maxLength={10}
+                  minLength={10}
                 />
                 <button type="submit">Login</button>
               </form>
@@ -189,6 +265,18 @@ const Homepage = () => {
           )}
           {enterOtp && (
             <div className="phone-input">
+              <span
+                className="dismiss"
+                onClick={() => {
+                  // eslint-disable-next-line no-unused-expressions
+                  setEnterOtp(false),
+                    setDisplayName(""),
+                    setPhoneNumber(""),
+                    setEmail("");
+                }}
+              >
+                <ImCross size={22} />
+              </span>
               <form onSubmit={verifyOtp}>
                 {/* <label htmlFor="phone">Enter your phone number</label> */}
                 <input
@@ -197,6 +285,8 @@ const Homepage = () => {
                   onChange={(e) => setVerificationCode(e.target.value)}
                   type="text"
                   placeholder="Enter OTP"
+                  minLength={6}
+                  maxLength={6}
                 />
                 <button type="submit">Submit</button>
               </form>
@@ -218,13 +308,13 @@ const Homepage = () => {
           </div>
           <div className="logout-option">
             <div className="logout-btn" onClick={logoutHandler}>
-              {user.photoURL ? (
-                <img src={user.photoURL} alt="" width={35} />
+              {user?.photoURL ? (
+                <img src={user.photoURL} alt="user profile" />
               ) : (
                 <IoPersonCircle size={35} color="#fffcfc" />
               )}
               <div>
-                {user.displayName && (
+                {user?.displayName && (
                   <span>{user.displayName.split(" ")[0]}</span>
                 )}
               </div>

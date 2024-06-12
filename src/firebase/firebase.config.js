@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getDatabase, set, get, ref, child } from "firebase/database"
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -18,7 +19,35 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = getFirestore(app)
+export const db = getDatabase(app)
+
+export const writeUserData = (id, name, email, phone) => {
+    set(ref(db, "users/" + id), {
+        name,
+        email,
+        phone
+    })
+}
+
+export const getUser = (userId) => {
+    const dbRef = ref(db);
+    let user = get(child(dbRef, `users/${userId}`));
+    // get(child(dbRef, `users/${userId}`)).then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //         console.log(snapshot.val());
+    //         user = snapshot.val();
+    //     } else {
+    //         console.log("No data available");
+    //         user = null;
+    //     }
+    // }).catch((error) => {
+    //     console.error(error);
+    // });
+
+    return user
+}
+
+console.log("db:", db)
 
 export default app;
 
