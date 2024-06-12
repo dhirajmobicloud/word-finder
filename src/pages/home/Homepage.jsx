@@ -54,7 +54,8 @@ const Homepage = () => {
     //       response.user.uid,
     //       response.user.displayName,
     //       response.user.email,
-    //       response.user.phoneNumber
+    //       response.user.phoneNumber,
+    //       response.user.photoURL
     //     );
     //   }
     //   setUser({
@@ -114,25 +115,26 @@ const Homepage = () => {
         if (!user.exists()) {
           writeUserData(
             result.user.uid,
-            result.user.displayName,
-            result.user.email,
+            displayName,
+            email,
             result.user.phoneNumber
           );
         }
         setDisplayName("");
         setEmail("");
-        setEnterOtp("");
+        setEnterOtp(false);
         setLoginThroughPhone(false);
         setPhoneNumber("");
-        setEnterOtp("");
-        setUser({
-          displayName: result.user.displayName,
-          accessToken: result.user.accessToken,
-          email: result.user.email,
-          phoneNumber: result.user.phoneNumber,
-          uid: result.user.uid,
-          photoURL: result.user.photoURL,
-        });
+        setVerificationCode("")
+
+        // setUser({
+        //   displayName: result.user.displayName,
+        //   accessToken: result.user.accessToken,
+        //   email: result.user.email,
+        //   phoneNumber: result.user.phoneNumber,
+        //   uid: result.user.uid,
+        //   photoURL: result.user.photoURL,
+        // });
 
         console.log("User :", result, user.exists());
       })
@@ -146,22 +148,38 @@ const Homepage = () => {
 
   const getStoredUser = async () => {
     setLoading(true);
-
-    auth.onAuthStateChanged((data) => {
+   
+    auth.onAuthStateChanged(async(data) => {
+      // setLoading(true)
       console.log(data);
-      data &&
-        setUser({
-          displayName: data.displayName,
-          accessToken: data.accessToken,
-          email: data.email,
-          phoneNumber: data.phoneNumber,
-          uid: data.uid,
-          photoURL: data.photoURL,
-        });
+      if(data){
+        if(data.displayName){
+          setUser({
+            displayName: data.displayName,
+            accessToken: data.accessToken,
+            email: data.email,
+            phoneNumber: data.phoneNumber,
+            uid: data.uid,
+            photoURL: data.photoURL,
+          });
+          setLoading(false)
+        }else{
+          const user = await getUser(data.uid);
+          console.log("USER_EXIST :", user.val().displayName)
+          user.exists() && setUser({
+            displayName: user.val().displayName,
+            email: user.val().email,
+            phoneNumber: user.val().phoneNumber,
+            uid: user.val().uid,
+          });
+          setLoading(false)
+        }
+
+      }
     });
-    setTimeout(() => {
-      setLoading(false);
-    }, 1500);
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 1500);
   };
 
   const logoutHandler = async () => {
@@ -189,7 +207,7 @@ const Homepage = () => {
       });
   }, []);
 
-  // console.log("User ::", user);
+  console.log("User ::", user);
 
   return (
     <div className="homepage">

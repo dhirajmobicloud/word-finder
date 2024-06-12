@@ -21,11 +21,13 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getDatabase(app)
 
-export const writeUserData = (id, name, email, phone) => {
-    set(ref(db, "users/" + id), {
-        name,
+export const writeUserData = (uid, displayName, email, phoneNumber) => {
+    set(ref(db, "users/" + uid), {
+        uid ,
+        displayName,
         email,
-        phone
+        phoneNumber,
+ 
     })
 }
 
