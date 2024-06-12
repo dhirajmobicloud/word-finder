@@ -42,6 +42,8 @@ const Homepage = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [verificationCode, setVerificationCode] = useState("");
   const [loading, setLoading] = useState(true);
+  const [loginBtn, setLoginBtn] = useState(false);
+  const [otpBtn, setOtpBtn] = useState(false);
 
   const signIn = async (e) => {
     const provider = new GoogleAuthProvider();
@@ -73,6 +75,7 @@ const Homepage = () => {
   };
 
   const phoneLogin = async (e) => {
+    setLoginBtn(true);
     try {
       e.preventDefault();
 
@@ -91,15 +94,18 @@ const Homepage = () => {
       setConfirmation(confirmationResult);
       setEnterOtp(true);
       setLoginThroughPhone(false);
+      setLoginBtn(false);
     } catch (error) {
       await Dialog.alert({
         title: "Stop",
         message: "Error while sending OTP",
       });
+      setLoginBtn(false);
     }
   };
 
   const verifyOtp = (e) => {
+    setOtpBtn(true);
     e.preventDefault();
     confirmation
       .confirm(verificationCode)
@@ -125,7 +131,7 @@ const Homepage = () => {
         setEnterOtp(false);
         setLoginThroughPhone(false);
         setPhoneNumber("");
-        setVerificationCode("")
+        setVerificationCode("");
 
         // setUser({
         //   displayName: result.user.displayName,
@@ -137,23 +143,26 @@ const Homepage = () => {
         // });
 
         console.log("User :", result, user.exists());
+        setOtpBtn(false);
+        setLoading(true);
       })
       .catch(async (error) => {
         await Dialog.alert({
           title: "Stop",
           message: "Error while verifying OTP",
         });
+        setOtpBtn(false);
       });
   };
 
   const getStoredUser = async () => {
     setLoading(true);
-   
-    auth.onAuthStateChanged(async(data) => {
+
+    auth.onAuthStateChanged(async (data) => {
       // setLoading(true)
       console.log(data);
-      if(data){
-        if(data.displayName){
+      if (data) {
+        if (data.displayName) {
           setUser({
             displayName: data.displayName,
             accessToken: data.accessToken,
@@ -162,24 +171,24 @@ const Homepage = () => {
             uid: data.uid,
             photoURL: data.photoURL,
           });
-          setLoading(false)
-        }else{
+          setLoading(false);
+        } else {
           const user = await getUser(data.uid);
-          console.log("USER_EXIST :", user.val().displayName)
-          user.exists() && setUser({
-            displayName: user.val().displayName,
-            email: user.val().email,
-            phoneNumber: user.val().phoneNumber,
-            uid: user.val().uid,
-          });
-          setLoading(false)
+          console.log("USER_EXIST :", user.val().displayName);
+          user.exists() &&
+            setUser({
+              displayName: user.val().displayName,
+              email: user.val().email,
+              phoneNumber: user.val().phoneNumber,
+              uid: user.val().uid,
+            });
+          setLoading(false);
         }
-
       }
+      setTimeout(() => {
+        setLoading(false);
+      }, 1500);
     });
-    // setTimeout(() => {
-    //   setLoading(false);
-    // }, 1500);
   };
 
   const logoutHandler = async () => {
@@ -205,7 +214,7 @@ const Homepage = () => {
       .catch((error) => {
         console.log("RedirectError ::: ", error);
       });
-  }, []);
+  }, [otpBtn]);
 
   console.log("User ::", user);
 
@@ -276,7 +285,9 @@ const Homepage = () => {
                   maxLength={10}
                   minLength={10}
                 />
-                <button type="submit">Login</button>
+                <button disabled={loginBtn} type="submit">
+                  Login
+                </button>
               </form>
               <div id="recaptcha-container"></div>
             </div>
@@ -306,7 +317,9 @@ const Homepage = () => {
                   minLength={6}
                   maxLength={6}
                 />
-                <button type="submit">Submit</button>
+                <button disabled={otpBtn} type="submit">
+                  Submit
+                </button>
               </form>
             </div>
           )}
