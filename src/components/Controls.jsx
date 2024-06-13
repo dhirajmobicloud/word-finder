@@ -523,7 +523,7 @@ function Controls() {
         </div>
         <div className="controls-submit">
           <Button
-            className="submit-btn"
+            className={`submit-btn${theme === "dark" ? "-dark" : ""}`}
             text="Submit"
             onClick={checkWord}
             disabled={letters.length !== row * wordLength}

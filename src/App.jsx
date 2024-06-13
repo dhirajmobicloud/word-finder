@@ -5,6 +5,7 @@ import Homepage from "./pages/home/Homepage";
 import PlayGround from "./pages/play-ground/PlayGround";
 import { App as capApp } from "@capacitor/app";
 import { useEffect } from "react";
+import { Login } from "./pages/login/Login";
 
 function App() {
   useTheme();
@@ -29,7 +30,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Homepage />} />
         <Route path="/play-ground" element={<PlayGround />} />
       </Routes>
     </BrowserRouter>

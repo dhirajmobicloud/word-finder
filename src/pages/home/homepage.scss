@@ -36,7 +36,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.5529411765);
+  // background-color: rgba(0, 0, 0, 0.5529411765);
+  background-image: url("../../assets/images/wall-1.png");
+  background-position: center;
+  background-size: cover;
   .option-login {
     display: flex;
     align-items: center;
@@ -51,6 +54,7 @@
       justify-content: space-around;
       width: 50%;
       border-radius: 10px;
+      font-size: 16px;
       border: none;
     }
   }
