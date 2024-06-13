@@ -92,7 +92,7 @@ function Exit() {
       "*"
     );
     dispatch.points.reset();
-    navigate("/");
+    navigate("/home");
   }
 
   function MyClick3() {

@@ -7,7 +7,7 @@ import { keyboards } from "../../store/initData";
 
 function Keyboard() {
   const dispatch = useDispatch();
-
+  const theme = useSelector((state) => state.themes);
   const { letters, wordLength, row } = useSelector((state) => state.board);
   const { absentLetters } = useSelector((state) => state.hints);
   const language = useSelector((state) => state.language);
@@ -49,7 +49,9 @@ function Keyboard() {
                   <Key
                     key={letter}
                     letter={letter}
-                    className={`keyboard-button ${
+                    className={`keyboard-${
+                      theme === "dark" ? "button-dark" : "button"
+                    } ${
                       checkLetterStatus(letters, absentLetters, letter)
                         ?.status ?? ""
                     }`}
@@ -58,7 +60,9 @@ function Keyboard() {
                 ) : (
                   <Button
                     key={letter}
-                    className="backspace-btn keyboard-button"
+                    className={`backspace-btn keyboard-${
+                      theme === "dark" ? "button-dark" : "button"
+                    }`}
                     text={<SVG src={BackspaceSVG} />}
                     onClick={removeLastLetter}
                   />

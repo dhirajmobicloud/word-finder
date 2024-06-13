@@ -1,5 +1,16 @@
+import { useSelector } from "react-redux";
+
 function Cell({ letter, status, anim }) {
-  return <div className={`board__cell ${status} ${anim}`}>{letter}</div>
+  const theme = useSelector((state) => state.themes);
+  return (
+    <div
+      className={`board${
+        theme == "dark" ? "__cell-dark" : "__cell"
+      } ${status} ${anim}`}
+    >
+      {letter}
+    </div>
+  );
 }
 
-export default Cell
+export default Cell;

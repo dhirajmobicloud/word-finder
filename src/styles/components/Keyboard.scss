@@ -50,4 +50,38 @@
       transition: background-color 0.5s ease;
     }
   }
+
+  &-button-dark {
+    // color: var(--text);
+    color: #fff;
+    // background: var(--bg-2);
+    background: #000000;
+    width: 45px;
+    margin: 2px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(105%);
+    }
+
+    &.correct {
+      color: #fff;
+      background: var(--correct);
+    }
+
+    &.present {
+      color: #fff;
+      background: var(--present);
+    }
+
+    &.absent {
+      color: #fff;
+      background-color: var(--absent);
+      transition: background-color 0.5s ease;
+    }
+  }
 }
