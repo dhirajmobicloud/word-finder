@@ -4,7 +4,6 @@ import { getRedirectResult } from "firebase/auth";
 import { auth, getUser, writeUserData } from "../../firebase/firebase.config";
 import { useEffect, useState } from "react";
 import logo from "../../assets/images/logo-1.png";
-import logo from "../../assets/images/logo-1.png";
 import { IoPersonCircle } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import Logout from "../../components/modals/Logout";
