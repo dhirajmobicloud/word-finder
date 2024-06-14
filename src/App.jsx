@@ -6,26 +6,27 @@ import PlayGround from "./pages/play-ground/PlayGround";
 import { App as capApp } from "@capacitor/app";
 import { useEffect } from "react";
 import { Login } from "./pages/login/Login";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   useTheme();
 
-  useEffect(() => {
-    capApp.addListener("appUrlOpen", (data) => {
-      const url = data.url;
-      console.log("Deep link URL:", url);
+  // useEffect(() => {
+  //   capApp.addListener("appUrlOpen", (data) => {
+  //     const url = data.url;
+  //     console.log("Deep link URL:", url);
 
-      // Parse the URL and navigate to the appropriate screen in your app
-      // For example:
-      // if (url.includes('login')) {
-      //   navigateToLogin();
-      // }
-    });
+  //     // Parse the URL and navigate to the appropriate screen in your app
+  //     // For example:
+  //     // if (url.includes('login')) {
+  //     //   navigateToLogin();
+  //     // }
+  //   });
 
-    return () => {
-      App.removeAllListeners();
-    };
-  }, []);
+  //   return () => {
+  //     App.removeAllListeners();
+  //   };
+  // }, []);
 
   return (
     <BrowserRouter>
@@ -34,6 +35,7 @@ function App() {
         <Route path="/home" element={<Homepage />} />
         <Route path="/play-ground" element={<PlayGround />} />
       </Routes>
+      <ToastContainer position="top-center" theme="light" autoClose={3500} />
     </BrowserRouter>
   );
 }

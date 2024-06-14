@@ -12,6 +12,7 @@ import {
 } from "firebase/auth";
 import Loder from "../../components/Loder";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Login = () => {
   const [displayName, setDisplayName] = useState("");
@@ -56,11 +57,40 @@ export const Login = () => {
     // });
   };
 
+  const isValidEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+
   const phoneLogin = async (e) => {
+    e.preventDefault();
+
+    if (displayName.length < 3) {
+      await Dialog.alert({
+        title: "Invalid name",
+        message: "Name should contains at least 3 characters.",
+      });
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      await Dialog.alert({
+        title: "Invalid email",
+        message: "Make sure your email follows the standard format.",
+      });
+      return;
+    }
+
+    if (phoneNumber.length < 10) {
+      await Dialog.alert({
+        title: "Invalid phone number",
+        message: "Phone number should be 10 digits long.",
+      });
+      return;
+    }
+
     setLoginBtn(true);
     try {
-      e.preventDefault();
-
       const recaptchaVerifier = new RecaptchaVerifier(
         auth,
         "recaptcha-container",
@@ -237,7 +267,7 @@ export const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
-              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+              // pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
               placeholder="Enter your email"
             />
             <input
@@ -253,8 +283,8 @@ export const Login = () => {
               placeholder="XXXXX XX789"
               type="number"
               // pattern="\d{10}"
-              maxlength="10"
-              minLength="10"
+              // maxlength="10"
+              // minLength="10"
             />
             <button disabled={loginBtn} type="submit">
               Login
@@ -287,8 +317,8 @@ export const Login = () => {
               onChange={(e) => setVerificationCode(e.target.value)}
               type="text"
               placeholder="Enter OTP"
-              minLength={6}
-              maxLength={6}
+              // minLength={6}
+              // maxLength={6}
             />
             <button disabled={otpBtn} type="submit">
               Submit
@@ -296,6 +326,18 @@ export const Login = () => {
           </form>
         </div>
       )}
+      <ToastContainer
+      // position="top-right"
+      // autoClose={5000}
+      // hideProgressBar={false}
+      // newestOnTop={false}
+      // closeOnClick
+      // rtl={false}
+      // pauseOnFocusLoss
+      // draggable
+      // pauseOnHover
+      // theme="light"
+      />
     </div>
   );
 };

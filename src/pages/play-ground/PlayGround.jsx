@@ -4,9 +4,12 @@ import { Header, Modals, Board, Controls, Keyboard } from "../../components";
 import { auth, db } from "../../firebase/firebase.config";
 import { useNavigate } from "react-router-dom";
 import { setDoc, doc, getDoc } from "firebase/firestore";
+import { App } from "@capacitor/app";
+import { useDispatch } from "react-redux";
 
 const PlayGround = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const getStoredUser = async () => {
     auth.onAuthStateChanged((data) => {
@@ -15,6 +18,14 @@ const PlayGround = () => {
   };
 
   useEffect(() => {
+    const backButtonHandler = () => {
+      // Your custom back button handling logic goes here
+      console.log("Back button pressed!");
+      dispatch.popups.open("exit");
+    };
+
+    App.addListener("backButton", backButtonHandler);
+
     getStoredUser();
   }, []);
 

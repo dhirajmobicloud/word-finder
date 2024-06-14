@@ -8,6 +8,7 @@ import { IoPersonCircle } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import Logout from "../../components/modals/Logout";
 import Loder from "../../components/Loder";
+import { App } from "@capacitor/app";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -77,6 +78,12 @@ const Homepage = () => {
       .catch((error) => {
         console.log("RedirectError ::: ", error);
       });
+
+    const backButtonHandler = () => {
+      dispatch.popups.open("logout");
+    };
+
+    App.addListener("backButton", backButtonHandler);
   }, []);
 
   console.log("User ::", user);
