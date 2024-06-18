@@ -193,6 +193,7 @@ export const Login = () => {
     //   .catch((error) => {
     //     console.log("RedirectError ::: ", error);
     //   });
+    // eslint-disable-next-line
   }, [otpBtn]);
 
   return (
@@ -220,6 +221,7 @@ export const Login = () => {
             className="dismiss"
             onClick={() => {
               // eslint-disable-next-line no-unused-expressions
+              // eslint-disable-next-line
               setLoginThroughPhone(false),
                 setDisplayName(""),
                 setPhoneNumber(""),
@@ -278,11 +280,12 @@ export const Login = () => {
         </div>
       )}
       {enterOtp && (
-        <div className="phone-input">
+        <div className="otp-input">
           <span
             className="dismiss"
             onClick={() => {
               // eslint-disable-next-line no-unused-expressions
+              // eslint-disable-next-line
               setEnterOtp(false),
                 setDisplayName(""),
                 setPhoneNumber(""),

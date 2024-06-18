@@ -206,7 +206,8 @@
 .modal.howToPlay {
   height: 90vh;
   width: 90vw;
-  background-image: url("../images/playimage.png");
+  // background-image: url("../images/playimage.png");
+  background-image: url("../images/HowToPlay-WordPlay.png");
   background-size: 100% 100%;
   // position: relative;
   background-position: center;
@@ -230,8 +231,8 @@
 
   &__close-btn {
     position: absolute;
-    top: 10px;
-    right: 25px;
+    top: 15px;
+    right: 18px;
     width: 24px;
     height: 24px;
     border: none;

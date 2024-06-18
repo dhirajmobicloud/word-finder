@@ -80,16 +80,19 @@ $board-sizes: 4, 5, 6, 7, 8, 9, 10, 11;
 
     &.correct {
       color: #fff;
-      background: #4da715;
+      // background: #4da715;
+      background: var(--correct);
       border: 3.5px solid #88dd54;
     }
 
     &.present {
       color: #fff;
-      background: #fdb000;
-      border: 3.5px solid #f9e03c;
+      // background: #fdb000;
+      background: var(--present);
+      // border: 3.5px solid #f9e03c;
+      border: 3.5px solid #ffb35b;
     }
-
+    
     &.absent {
       color: #fff;
       background: var(--absent);
@@ -135,13 +138,15 @@ $board-sizes: 4, 5, 6, 7, 8, 9, 10, 11;
 
     &.correct {
       color: #fff;
-      background: #4da715;
+      // background: #4da715;
+      background: var(--correct);
       border: 3.5px solid #88dd54;
     }
 
     &.present {
       color: #fff;
-      background: #fdb000;
+      // background: #fdb000;
+      background: var(--present);;
       border: 3.5px solid #f9e03c;
     }
 
