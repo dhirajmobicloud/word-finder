@@ -1,42 +1,51 @@
 import { useTheme } from "./hooks";
 import "./styles/app.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Homepage from "./pages/home/Homepage";
 import PlayGround from "./pages/play-ground/PlayGround";
-import { App as capApp } from "@capacitor/app";
+import { App as capApp, } from "@capacitor/app";
 import { useEffect } from "react";
 import { Login } from "./pages/login/Login";
-import { ToastContainer } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { Dialog } from "@capacitor/dialog";
 
 function App() {
+
+  const dispatch = useDispatch();
+
   useTheme();
 
-  // useEffect(() => {
-  //   capApp.addListener("appUrlOpen", (data) => {
-  //     const url = data.url;
-  //     console.log("Deep link URL:", url);
+  useEffect(() => {
 
-  //     // Parse the URL and navigate to the appropriate screen in your app
-  //     // For example:
-  //     // if (url.includes('login')) {
-  //     //   navigateToLogin();
-  //     // }
-  //   });
+    capApp.addListener("backButton", async (data) => {
 
-  //   return () => {
-  //     App.removeAllListeners();
-  //   };
-  // }, []);
+      if (window.location.pathname === "/" || window.location.pathname === "/home") {
+
+        const { value } = await Dialog.confirm({ title: "Exit the game ?", message: "" });
+        if (value) {
+          await capApp.exitApp()
+        }
+      }
+      else if (window.location.pathname === "/play-ground") {
+
+        dispatch.popups.open("exit");
+      }
+
+    });
+
+    return () => {
+      capApp.removeAllListeners()
+    }
+  }, []);
 
   return (
-    <BrowserRouter>
+    <>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Homepage />} />
         <Route path="/play-ground" element={<PlayGround />} />
       </Routes>
-      <ToastContainer position="top-center" theme="light" autoClose={3500} />
-    </BrowserRouter>
+    </>
   );
 }
 

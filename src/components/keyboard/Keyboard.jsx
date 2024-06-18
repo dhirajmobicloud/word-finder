@@ -63,7 +63,7 @@ function Keyboard() {
                     className={`backspace-btn keyboard-${
                       theme === "dark" ? "button-dark" : "button"
                     }`}
-                    text={<SVG src={BackspaceSVG} />}
+                    text={<SVG src={BackspaceSVG}/>}
                     onClick={removeLastLetter}
                   />
                 )

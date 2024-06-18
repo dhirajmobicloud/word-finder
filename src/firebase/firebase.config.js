@@ -23,33 +23,21 @@ export const db = getDatabase(app)
 
 export const writeUserData = (uid, displayName, email, phoneNumber) => {
     set(ref(db, "users/" + uid), {
-        uid ,
+        uid,
         displayName,
         email,
         phoneNumber,
- 
+
     })
 }
 
 export const getUser = (userId) => {
     const dbRef = ref(db);
     let user = get(child(dbRef, `users/${userId}`));
-    // get(child(dbRef, `users/${userId}`)).then((snapshot) => {
-    //     if (snapshot.exists()) {
-    //         console.log(snapshot.val());
-    //         user = snapshot.val();
-    //     } else {
-    //         console.log("No data available");
-    //         user = null;
-    //     }
-    // }).catch((error) => {
-    //     console.error(error);
-    // });
 
     return user
 }
 
-console.log("db:", db)
 
 export default app;
 

@@ -7,13 +7,16 @@ import { store } from './store/rematch'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration.js'
 import App from './App'
 import './locales'
+import { BrowserRouter } from 'react-router-dom'
 
 const persistor = getPersistor()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <PersistGate persistor={persistor}>
     <Provider store={store}>
+      <BrowserRouter>
       <App />
+      </BrowserRouter>
     </Provider>
   </PersistGate>
 )

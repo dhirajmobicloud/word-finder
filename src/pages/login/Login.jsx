@@ -6,13 +6,12 @@ import { auth, getUser, writeUserData } from "../../firebase/firebase.config";
 import {
   signInWithPhoneNumber,
   RecaptchaVerifier,
-  getRedirectResult,
-  signInWithRedirect,
-  GoogleAuthProvider,
+  // getRedirectResult,
+  // signInWithRedirect,
+  // GoogleAuthProvider,
 } from "firebase/auth";
 import Loder from "../../components/Loder";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 
 export const Login = () => {
   const [displayName, setDisplayName] = useState("");
@@ -28,34 +27,36 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
-  const signIn = async (e) => {
-    const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
-    setLoading(true);
-    // return signInWithPopup(auth, provider).then(async (response) => {
-    //   const user = await getUser(response.user.uid);
-    //   if (!user.exists()) {
-    //     writeUserData(
-    //       response.user.uid,
-    //       response.user.displayName,
-    //       response.user.email,
-    //       response.user.phoneNumber,
-    //       response.user.photoURL
-    //     );
-    //   }
-    //   setUser({
-    //     displayName: response.user.displayName,
-    //     accessToken: response.user.accessToken,
-    //     email: response.user.email,
-    //     phoneNumber: response.user.phoneNumber,
-    //     uid: response.user.uid,
-    //     photoURL: response.user.photoURL,
-    //   });
-    //   // await setDoc(doc(db, "Users", response.user.uid), { score: 0 });
 
-    //   console.log("User :");
-    // });
-  };
+  // const signIn = async (e) => {
+  //   const provider = new GoogleAuthProvider();
+  //   signInWithRedirect(auth, provider);
+  //   setLoading(true);
+  //   ////----/////
+  //   // return signInWithPopup(auth, provider).then(async (response) => {
+  //   //   const user = await getUser(response.user.uid);
+  //   //   if (!user.exists()) {
+  //   //     writeUserData(
+  //   //       response.user.uid,
+  //   //       response.user.displayName,
+  //   //       response.user.email,
+  //   //       response.user.phoneNumber,
+  //   //       response.user.photoURL
+  //   //     );
+  //   //   }
+  //   //   setUser({
+  //   //     displayName: response.user.displayName,
+  //   //     accessToken: response.user.accessToken,
+  //   //     email: response.user.email,
+  //   //     phoneNumber: response.user.phoneNumber,
+  //   //     uid: response.user.uid,
+  //   //     photoURL: response.user.photoURL,
+  //   //   });
+  //   //   // await setDoc(doc(db, "Users", response.user.uid), { score: 0 });
+
+  //   //   console.log("User :");
+  //   // });
+  // };
 
   const isValidEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -125,10 +126,7 @@ export const Login = () => {
       .confirm(verificationCode)
       .then(async (result) => {
         const currentUser = auth.currentUser;
-        // user.updateProfile({
-        //   displayName,
-        //   email,
-        // });
+
         currentUser.displayName = displayName;
         currentUser.email = email;
         const user = await getUser(result.user.uid);
@@ -148,16 +146,6 @@ export const Login = () => {
         setVerificationCode("");
         navigate("/home");
 
-        // setUser({
-        //   displayName: result.user.displayName,
-        //   accessToken: result.user.accessToken,
-        //   email: result.user.email,
-        //   phoneNumber: result.user.phoneNumber,
-        //   uid: result.user.uid,
-        //   photoURL: result.user.photoURL,
-        // });
-
-        console.log("User :", result, user.exists());
         setOtpBtn(false);
       })
       .catch(async (error) => {
@@ -176,39 +164,35 @@ export const Login = () => {
     setLoading(true);
 
     auth.onAuthStateChanged(async (data) => {
-      // setLoading(true)
-      console.log(data);
+
       if (data) {
         navigate("/home");
-        // setLoading(false);
+
       } else {
         setLoading(false);
       }
-      // setTimeout(() => {
-      //   setLoading(false);
-      // }, 1500);
+
     });
   };
 
   useEffect(() => {
     setLoading(true);
     getStoredUser();
-    getRedirectResult(auth)
-      .then(async (response) => {
-        console.log("RedirectResult ::: ", response);
-        const user = await getUser(response.user.uid);
-        if (!user.exists()) {
-          writeUserData(
-            response.user.uid,
-            response.user.displayName,
-            response.user.email,
-            response.user.phoneNumber
-          );
-        }
-      })
-      .catch((error) => {
-        console.log("RedirectError ::: ", error);
-      });
+    // getRedirectResult(auth)
+    //   .then(async (response) => {
+    //     const user = await getUser(response.user.uid);
+    //     if (!user.exists()) {
+    //       writeUserData(
+    //         response.user.uid,
+    //         response.user.displayName,
+    //         response.user.email,
+    //         response.user.phoneNumber
+    //       );
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log("RedirectError ::: ", error);
+    //   });
   }, [otpBtn]);
 
   return (
@@ -282,9 +266,9 @@ export const Login = () => {
               }}
               placeholder="XXXXX XX789"
               type="number"
-              // pattern="\d{10}"
-              // maxlength="10"
-              // minLength="10"
+            // pattern="\d{10}"
+            // maxlength="10"
+            // minLength="10"
             />
             <button disabled={loginBtn} type="submit">
               Login
@@ -314,11 +298,12 @@ export const Login = () => {
             <input
               required
               value={verificationCode}
-              onChange={(e) => setVerificationCode(e.target.value)}
-              type="text"
+              // eslint-disable-next-line no-unused-expressions
+              onChange={(e) => { e.target.value.length < 7 ? setVerificationCode(e.target.value) : "" }}
+              type="number"
               placeholder="Enter OTP"
-              // minLength={6}
-              // maxLength={6}
+            // minLength={6}
+            // maxLength={6}
             />
             <button disabled={otpBtn} type="submit">
               Submit
@@ -326,18 +311,7 @@ export const Login = () => {
           </form>
         </div>
       )}
-      <ToastContainer
-      // position="top-right"
-      // autoClose={5000}
-      // hideProgressBar={false}
-      // newestOnTop={false}
-      // closeOnClick
-      // rtl={false}
-      // pauseOnFocusLoss
-      // draggable
-      // pauseOnHover
-      // theme="light"
-      />
+
     </div>
   );
 };

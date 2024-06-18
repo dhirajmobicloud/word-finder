@@ -75,7 +75,7 @@ function Controls() {
     (state) => state.board
   );
 
-  console.log(answer);
+  // console.log(answer);
   const { wp, minutes, seconds, isPlaying, isZero } = useSelector(
     (state) => state.points
   );
@@ -169,7 +169,7 @@ function Controls() {
 
   useEffect(() => {
     window.addEventListener("unload", () => {
-      window.parent.console.log("Child is gone");
+      // window.parent.console.log("Child is gone");
     });
   }, []);
 
@@ -517,7 +517,7 @@ function Controls() {
             src={hintImg}
             className="controls-hintImg"
             alt=""
-            srcset=""
+            srcSet=""
             onClick={() => Myhint()}
           />
         </div>
