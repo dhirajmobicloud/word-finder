@@ -1,7 +1,7 @@
 .win-row {
   display: flex;
   justify-content: center;
-  margin-top: 3.9rem;
+  margin-top: 2rem;
 
   &__earned {
     color: var(--success);
@@ -19,5 +19,32 @@
 .win-data{
     color: black;
     font-size: 220%;
-    margin-top: 15px
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+
+.win-controls{
+  display: flex;
+    // padding: 20px;
+    justify-content: space-around;
+    
+    .win-controls-play{
+      padding: 10px;
+    background-color: #fdb000;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 7px
+    }
+    .win-controls-exit{
+      padding: 10px 38px;
+      background-color: gray;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+    font-weight: bold;
+    border-radius: 7px
+    }
 }

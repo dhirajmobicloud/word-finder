@@ -16,6 +16,7 @@
   background: #ff860a;
   border: solid #e7e9c8 2px;
   border-radius: 15px;
+
   button {
     text-transform: uppercase;
     font-weight: bold;
@@ -40,6 +41,7 @@
   background-image: url("../../assets/images/wall-1.png");
   background-position: center;
   background-size: cover;
+
   .option-login {
     display: flex;
     align-items: center;
@@ -47,6 +49,7 @@
     padding: 10px;
     // position: absolute;
     width: 100%;
+
     button {
       padding: 10px;
       align-items: center;
@@ -70,13 +73,16 @@
     border-radius: 15px;
     width: 90%;
     min-height: 200px;
+
     .dismiss {
       position: absolute;
       top: 5px;
       right: 15px;
     }
+
     .phone-input-heading {
-      margin-top: 20px;
+      margin-bottom: 10px;
+
       h5 {
         display: flex;
         align-items: center;
@@ -84,11 +90,13 @@
         margin-bottom: 10px;
       }
     }
+
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
+
       input {
         padding: 6px;
         border: none;
@@ -98,6 +106,7 @@
         font-size: 1.1rem;
         text-align: center;
       }
+
       button {
         width: max-content;
         padding: 7px 10px;
@@ -107,10 +116,12 @@
         font-size: 15px;
       }
     }
+
     #recaptcha-container {
       margin-top: 10px;
     }
   }
+
   .otp-input {
     display: flex;
     flex-direction: column;
@@ -122,13 +133,16 @@
     border-radius: 15px;
     width: 90%;
     min-height: 200px;
+
     .dismiss {
       position: absolute;
       top: 5px;
       right: 15px;
     }
+
     .phone-input-heading {
-      margin-top: 20px;
+      margin-bottom: 10px;
+
       h5 {
         display: flex;
         align-items: center;
@@ -136,20 +150,23 @@
         margin-bottom: 10px;
       }
     }
+
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
+
       input {
         padding: 6px;
         border: none;
         border-radius: 5px;
-        margin: 33px 0 30px 0;
+        margin: 0px 0 20px 0;
         width: 80%;
         font-size: 1.1rem;
         text-align: center;
       }
+
       button {
         width: max-content;
         padding: 7px 10px;
@@ -159,6 +176,7 @@
         font-size: 15px;
       }
     }
+
     #recaptcha-container {
       margin-top: 10px;
     }
@@ -172,17 +190,23 @@
   width: 100%;
   display: flex;
   justify-content: center;
+
   .logout-btn {
     padding: 0 10px;
     background-color: rgba(0, 0, 0, 0.286);
     border-radius: 30px;
     display: flex;
     align-items: center;
+
     span {
       color: #fff !important;
       font-weight: bold;
       font-size: large !important;
+      margin-left: 8px !important;
+      // display: flex !important;
+      // align-items: center !important; 
     }
+
     img {
       border-radius: 50%;
       margin: 0 3px 0 0;

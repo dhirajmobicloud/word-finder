@@ -8,13 +8,13 @@ const PlayGround = () => {
   const navigate = useNavigate();
 
   const getStoredUser = async () => {
-    auth.onAuthStateChanged((data) => {
-      if (!data) navigate("/");
-    });
+    // auth.onAuthStateChanged((data) => {
+    //   if (!data) navigate("/");
+    // });
   };
 
   useEffect(() => {
-    getStoredUser();
+    // getStoredUser();
     // eslint-disable-next-line
   }, []);
 

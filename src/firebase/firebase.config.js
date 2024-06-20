@@ -26,7 +26,7 @@ export const writeUserData = (uid, displayName, email, phoneNumber) => {
         uid,
         displayName,
         email,
-        phoneNumber,
+        // phoneNumber,
 
     })
 }

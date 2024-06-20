@@ -5,12 +5,16 @@ const config: CapacitorConfig = {
   appName: "Word Play",
   webDir: "build",
   bundledWebRuntime: false,
+  server: {
+    hostname : "wordplay.local"
+  },
   plugins: {
     DeepLinks: {
       schemes: ["wordplay"],
       hosts: ["wordplay.local"],
     },
   },
+
 };
 
 export default config;

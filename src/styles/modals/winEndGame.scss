@@ -8,6 +8,9 @@
       font-size: 1.1rem;
       font-weight: 500;
     }
+
+
+
   
   }
 
@@ -18,4 +21,31 @@
     font-style: normal;
     font-weight: 400
   }
+
+  .winend-controls{
+    display: flex;
+      padding: 20px;
+      justify-content: space-around;
+      
+      .winend-controls-play{
+        padding: 10px;
+      background-color: #fdb000;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 7px
+      }
+      .winend-controls-exit{
+        padding: 10px 38px;
+        background-color: gray;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+      font-weight: bold;
+      border-radius: 7px
+      }
+  }
+
+ 
   

@@ -5,9 +5,10 @@ import Homepage from "./pages/home/Homepage";
 import PlayGround from "./pages/play-ground/PlayGround";
 import { App as capApp, } from "@capacitor/app";
 import { useEffect } from "react";
-import { Login } from "./pages/login/Login";
+import { Login } from "./pages/login/Login1";
 import { useDispatch } from "react-redux";
 import { Dialog } from "@capacitor/dialog";
+import ForgetPassword from "./pages/login/ForgetPassword";
 
 function App() {
 
@@ -41,8 +42,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
+        {/* <Route path="/forget-password" element={<ForgetPassword/>}/> */}
+        {/* <Route path="/home" element={<Homepage />} /> */}
         <Route path="/play-ground" element={<PlayGround />} />
       </Routes>
     </>

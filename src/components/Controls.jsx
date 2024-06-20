@@ -10,6 +10,7 @@ import gameover from "../styles/music/gameOver.mp3";
 // import axios from "axios";
 import scoreImg from "../assets/images/award.png";
 import hintImg from "../assets/images/hint.png";
+import { Preferences } from "@capacitor/preferences";
 
 function Controls() {
   const dispatch = useDispatch();
@@ -20,6 +21,8 @@ function Controls() {
   const gamingId = prices.gamingId;
   const language1 = "en";
   const [flag, setFlag] = useState(false);
+
+  // const [isWon, setIsWon] = useState(false)
 
   const language = useSelector((state) => state.language);
 
@@ -76,7 +79,7 @@ function Controls() {
   );
 
   // console.log(answer);
-  const { wp, minutes, seconds, isPlaying, isZero } = useSelector(
+  const { wp, minutes, seconds, isPlaying, isZero, isWon } = useSelector(
     (state) => state.points
   );
 
@@ -146,7 +149,7 @@ function Controls() {
         localStorage.setItem("sessionId", sessionData);
         setMySessionData(localStorage.getItem("sessionId"));
       }
-      if (minutes > 0 && howToPlay === false) {
+      if (minutes > 0 && howToPlay === false && !isWon) {
         if (seconds === 0) {
           dispatch.points.setSeconds(59);
           dispatch.points.addMinutes();
@@ -154,7 +157,7 @@ function Controls() {
           dispatch.points.addSeconds();
         }
       }
-      if (minutes === 0 && howToPlay === false) {
+      if (minutes === 0 && howToPlay === false && !isWon) {
         if (seconds > 0) {
           dispatch.points.addSeconds();
         }
@@ -325,19 +328,32 @@ function Controls() {
     dispatch.board.addWord(newWord);
   }
 
-  function checkGameOver(currentWord, answer, row) {
+  const storeWins = async() =>{
+    // const { value } = await Preferences.get({ key: 'wins' });
+    // await Preferences.set({
+    //   key: 'wins',
+    //   value: Number(value) + 1,
+    // });
+    const storedWins = localStorage.getItem('wins');
+    localStorage.setItem('wins', Number(storedWins) + 1)
+  }
+  
+
+  const checkGameOver = async (currentWord, answer, row) => {
     if (currentWord === answer) {
       let audio1 = new Audio(success);
       if (isPlaying === true) {
         audio1.play();
       }
       dispatch.popups.open("win");
+      dispatch.points.setIsWon(true)
       dispatch.statistics.win();
       dispatch.hints.reset();
-
-      setTimeout(() => {
-        dispatch.popups.close("win");
-      }, 3000);
+      await storeWins();
+      // dispatch.popups.close("win");
+      // setTimeout(() => {
+      //   dispatch.popups.close("win");
+      // }, 3000);
     } else if (row === 6) {
       if (checkWordNotExist(dictionary[language1], currentWord) === true) {
         let audio1 = new Audio(negative);
@@ -370,15 +386,15 @@ function Controls() {
         console.log(err);
       });
 
-    setTimeout(() => {
-      window.parent.postMessage(myvalue, "*");
-      dispatch.popups.close("defeatend");
-      dispatch.board.reset();
-      dispatch.hints.reset();
-      dispatch.board.newAnswer(language);
-      dispatch.points.reset();
-      localStorage.removeItem("persist:root");
-    }, 3000);
+    // setTimeout(() => {
+    //   window.parent.postMessage(myvalue, "*");
+    //   dispatch.popups.close("defeatend");
+    //   dispatch.board.reset();
+    //   dispatch.hints.reset();
+    //   dispatch.board.newAnswer(language);
+    //   dispatch.points.reset();
+    //   localStorage.removeItem("persist:root");
+    // }, 3000);
   }
 
   function checkGameOverForTimer(currentWord, answer, row) {
@@ -421,29 +437,29 @@ function Controls() {
     } else if (row <= 6) {
       dispatch.popups.open("defeatend");
 
-      fetch(link, {
-        body: JSON.stringify(myvalue),
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => {})
-        .catch((err) => {
-          console.log(err);
-        });
+      // fetch(link, {
+      //   body: JSON.stringify(myvalue),
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // })
+      //   .then((response) => {})
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
 
-      setTimeout(() => {
-        window.parent.postMessage(myvalue, "*");
+      // setTimeout(() => {
+      //   window.parent.postMessage(myvalue, "*");
 
-        dispatch.popups.close("defeatend");
+      //   dispatch.popups.close("defeatend");
 
-        dispatch.board.reset();
-        dispatch.hints.reset();
-        dispatch.board.newAnswer(language);
-        dispatch.points.reset();
-        localStorage.removeItem("persist:root");
-      }, 3000);
+      //   dispatch.board.reset();
+      //   dispatch.hints.reset();
+      //   dispatch.board.newAnswer(language);
+      //   dispatch.points.reset();
+      //   localStorage.removeItem("persist:root");
+      // }, 3000);
     }
   }
 
@@ -477,6 +493,8 @@ function Controls() {
     }
   }
 
+  // dispatch.popups.open("winend");
+  // dispatch.popups.open("defeatend");
   return (
     <div className="controls">
       {/* <div className="controls-hintdata" onClick={() => Myhint()}></div> */}

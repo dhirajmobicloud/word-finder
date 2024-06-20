@@ -1,18 +1,33 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
+import { useNavigate } from "react-router-dom";
 
 function DefeatEndPopup() {
   const { answer } = useSelector((state) => state.board);
   const { wp } = useSelector((state) => state.points);
 
+  const language = useSelector((state) => state.language);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  function newGame() {
+    dispatch.popups.close("defeatend");
+    dispatch.points.reset();
+    dispatch.board.reset();
+    dispatch.hints.reset();
+    dispatch.board.newAnswer(language);
+  }
+
   if (wp > 0) {
     return (
       <Modal
         title="defeatend"
+        noClose={true}
         body={
           <>
             <div className="defeatend-row1">
-              <p className="defeatend-text1">Game Over</p>
+              <p className="defeatend-text1">Sorry... You Lost</p>
             </div>
             <div className="defeatend-row2">
               <p className="defeatend-text2">The Answer is</p>
@@ -30,6 +45,15 @@ function DefeatEndPopup() {
                 Your score is: <span className="defeatend-coin1">{wp}</span>
               </p>
             </div>
+
+            <div className="win-controls">
+              <button className="win-controls-play" onClick={newGame}>
+                Play again
+              </button>
+              <button className="win-controls-exit" onClick={()=>{ navigate("/"); dispatch.popups.close("defeatend") }}>
+                Exit
+              </button>
+            </div>
           </>
         }
       />
@@ -38,10 +62,11 @@ function DefeatEndPopup() {
     return (
       <Modal
         title="defeatend"
+        noClose={true}
         body={
           <>
             <div className="defeatend-row1">
-              <p className="defeatend-text1">Game Over</p>
+              <p className="defeatend-text1">Sorry... You Lost</p>
             </div>
             <div className="defeatend-row2">
               <p className="defeatend-text2">The Answer is</p>
@@ -55,7 +80,17 @@ function DefeatEndPopup() {
             </div>
 
             <div className="defeatend-row3">
-              <p className="defeatend-text2">Sorry... You Lost</p>
+              <p className="defeatend-text21">
+                Your score is: <span className="defeatend-coin1">{wp}</span>
+              </p>
+            </div>
+            <div className="win-controls">
+              <button className="win-controls-play" onClick={newGame}>
+                Play again
+              </button>
+              <button className="win-controls-exit" onClick={()=>{ navigate("/"); dispatch.popups.close("defeatend") }}>
+                Exit
+              </button>
             </div>
           </>
         }

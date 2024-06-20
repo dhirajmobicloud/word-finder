@@ -25,6 +25,7 @@ const init = {
   isZero: true,
   winpopup: false,
   defeatpopup: false,
+  isWon : false
 };
 
 export const points = {
@@ -32,6 +33,10 @@ export const points = {
   reducers: {
     reset(state) {
       return { ...init, wp: prices.wp };
+    },
+
+    setIsWon(state, value){
+      state.isWon = value
     },
 
     addPoints(state, points) {
