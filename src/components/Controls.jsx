@@ -363,7 +363,7 @@ function Controls() {
       }
       if (checkWordNotExist(dictionary[language1], currentWord) === false) {
         setFlag(true);
-
+        dispatch.points.setIsWon(true)
         dispatch.popups.open("defeatend");
         dispatch.statistics.win();
         dispatch.hints.reset();
@@ -412,29 +412,30 @@ function Controls() {
         .catch((err) => {
           console.log(err);
         });
-
+        dispatch.points.setIsWon(true)
       dispatch.popups.open("winend");
 
-      setTimeout(() => {
-        window.parent.postMessage(
-          {
-            gameCode: gamingId,
-            sessionId: mysessiondata,
-            score: wp, //random unique id
-            subId: subId,
-            gamestate: "over",
-            currlevel: 1,
-          },
-          "*"
-        );
-        dispatch.board.reset();
-        dispatch.hints.reset();
-        dispatch.board.newAnswer(language);
-        dispatch.points.reset();
-        localStorage.removeItem("persist:root");
-        dispatch.popups.close("winend");
-      }, 3000);
+      // setTimeout(() => {
+      //   window.parent.postMessage(
+      //     {
+      //       gameCode: gamingId,
+      //       sessionId: mysessiondata,
+      //       score: wp, //random unique id
+      //       subId: subId,
+      //       gamestate: "over",
+      //       currlevel: 1,
+      //     },
+      //     "*"
+      //   );
+      //   dispatch.board.reset();
+      //   dispatch.hints.reset();
+      //   dispatch.board.newAnswer(language);
+      //   dispatch.points.reset();
+      //   localStorage.removeItem("persist:root");
+      //   dispatch.popups.close("winend");
+      // }, 3000);
     } else if (row <= 6) {
+      dispatch.points.setIsWon(true)
       dispatch.popups.open("defeatend");
 
       // fetch(link, {
