@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "com.example.com",
+  appId: "com.mobicloud.wordplay",
   appName: "Word Play",
   webDir: "build",
   bundledWebRuntime: false,

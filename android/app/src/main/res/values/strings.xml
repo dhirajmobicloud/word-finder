@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Word Play</string>
     <string name="title_activity_main">Word Play</string>
-    <string name="package_name">com.example.com</string>
-    <string name="custom_url_scheme">com.example.com</string>
+    <string name="package_name">com.mobicloud.wordplay</string>
+    <string name="custom_url_scheme">com.mobicloud.wordplay</string>
 </resources>

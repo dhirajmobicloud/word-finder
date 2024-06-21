@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.com",
+  "applicationId": "com.mobicloud.wordplay",
   "variantName": "release",
   "elements": [
     {

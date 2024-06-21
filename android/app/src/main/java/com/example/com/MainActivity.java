@@ -1,4 +1,4 @@
-package com.example.com;
+package com.mobicloud.wordplay;
 
 import com.getcapacitor.BridgeActivity;
 
